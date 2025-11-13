@@ -56,6 +56,26 @@ A professional diagram illustrating the project's architecture would be highly b
 
 6.  **Add a Legend:** Include a legend to explain the different shapes, colors, and arrow types used in the diagram.
 
+Here's a simplified text-based diagram of the system:
+
+```
++-----------------+    +-----------------+    +-----------------+
+|    Streamlit UI   |    |   PDF/URL Input  |    |  Text Extractor |
++-----------------+    +-----------------+    +-----------------+
+        ^                     |                     |
+        |                     |                     |
+        |                     v                     v
++-----------------+    +-----------------+    +-----------------+
+| Language Model  |    |   Text Splitter  |    | Embedding Model |
++-----------------+    +-----------------+    +-----------------+
+        ^                     |                     |
+        |                     |                     |
+        |                     v                     v
++-----------------+    +-----------------+
+|   Vector Store    |    |  User Question  |
++-----------------+    +-----------------+
+```
+
 By following these guidelines, you can create a professional-looking diagram that effectively communicates the architecture of the project.
 
 ## Setup (local)
