@@ -44,42 +44,19 @@ A professional diagram illustrating the project's architecture would be highly b
     *   Use different types of arrows to indicate different types of relationships (e.g., data flow, control flow).
     *   Label the arrows to describe the data or control that is being passed between the components.
 
-    For example:
-    *   User Input -> PDF/URL Input: User provides a PDF file or URL.
-    *   PDF/URL Input -> Text Extractor: The input is passed to the text extractor.
-    *   Text Extractor -> Text Splitter: Extracted text is split into chunks.
-    *   Text Splitter -> Embedding Model: Text chunks are converted into embeddings.
-    *   Embedding Model -> Vector Store: Embeddings are stored in the vector store.
-    *   User Question -> Vector Store: User's question is used to search the vector store.
-    *   Vector Store -> Language Model: Relevant text chunks are retrieved from the vector store and passed to the language model.
-    *   Language Model -> Streamlit UI: The language model generates an answer, which is displayed in the Streamlit UI.
-
 6.  **Add a Legend:** Include a legend to explain the different shapes, colors, and arrow types used in the diagram.
 
-Here's a more detailed text-based diagram of the system:
+Here's the Mermaid code for the system diagram:
 
-```
-+-------------------------------------+    +-------------------------------------+    +-------------------------------------+
-|        Streamlit UI (Streamlit)       |    |   PDF/URL Input (Streamlit)         |    |  Text Extractor (PyPDF2, BS4)       |
-|                                     |    |                                     |    |                                     |
-|  Displays chatbot and source refs   |    |  Handles PDF upload/URL input       |    |  Extracts text from PDF/web pages   |
-+-------------------------------------+    +-------------------------------------+    +-------------------------------------+
-        ^                                  |                                     |                                     |
-        | Answer + Source References        |                                     |                                     |
-        |                                  v                                     v                                     |
-+-------------------------------------+    +-------------------------------------+    +-------------------------------------+
-|   Language Model (HuggingFace T5)   |    |   Text Splitter (Langchain)         |    | Embedding Model (Sentence-Trans)    |
-|                                     |    |                                     |    |                                     |
-|  Generates answers from context      |    |  Splits text into smaller chunks     |    |  Creates vector embeddings of text  |
-+-------------------------------------+    +-------------------------------------+    +-------------------------------------+
-        ^                                  |                                     |                                     |
-        | Relevant Text Chunks              |                                     |                                     |
-        |                                  v                                     v                                     |
-+-------------------------------------+    +-------------------------------------+
-|      Vector Store (ChromaDB)         |    |  User Question (Streamlit)         |
-|                                     |    |                                     |
-|  Stores and retrieves text embeddings |    |  User's question about policies     |
-+-------------------------------------+    +-------------------------------------+
+```mermaid
+graph LR
+    A[Streamlit UI] --> B(Language Model);
+    C[PDF/URL Input] --> D(Text Extractor);
+    D --> E(Text Splitter);
+    E --> F(Embedding Model);
+    F --> G(Vector Store);
+    H[User Question] --> G;
+    G --> B;
 ```
 
 **Disclaimer:** Due to the limitations of text-based representation, I cannot create a more visually detailed and professional diagram. Please use the instructions and suggestions provided above, along with a dedicated diagramming tool, to create a diagram that meets your specific needs.
