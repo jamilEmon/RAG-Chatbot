@@ -56,27 +56,33 @@ A professional diagram illustrating the project's architecture would be highly b
 
 6.  **Add a Legend:** Include a legend to explain the different shapes, colors, and arrow types used in the diagram.
 
-Here's a simplified text-based diagram of the system:
+Here's a more detailed text-based diagram of the system:
 
 ```
-+-----------------+    +-----------------+    +-----------------+
-|    Streamlit UI   |    |   PDF/URL Input  |    |  Text Extractor |
-+-----------------+    +-----------------+    +-----------------+
-        ^                     |                     |
-        |                     |                     |
-        |                     v                     v
-+-----------------+    +-----------------+    +-----------------+
-| Language Model  |    |   Text Splitter  |    | Embedding Model |
-+-----------------+    +-----------------+    +-----------------+
-        ^                     |                     |
-        |                     |                     |
-        |                     v                     v
-+-----------------+    +-----------------+
-|   Vector Store    |    |  User Question  |
-+-----------------+    +-----------------+
++-------------------------------------+    +-------------------------------------+    +-------------------------------------+
+|        Streamlit UI (Streamlit)       |    |   PDF/URL Input (Streamlit)         |    |  Text Extractor (PyPDF2, BS4)       |
+|                                     |    |                                     |    |                                     |
+|  Displays chatbot and source refs   |    |  Handles PDF upload/URL input       |    |  Extracts text from PDF/web pages   |
++-------------------------------------+    +-------------------------------------+    +-------------------------------------+
+        ^                                  |                                     |                                     |
+        | Answer + Source References        |                                     |                                     |
+        |                                  v                                     v                                     |
++-------------------------------------+    +-------------------------------------+    +-------------------------------------+
+|   Language Model (HuggingFace T5)   |    |   Text Splitter (Langchain)         |    | Embedding Model (Sentence-Trans)    |
+|                                     |    |                                     |    |                                     |
+|  Generates answers from context      |    |  Splits text into smaller chunks     |    |  Creates vector embeddings of text  |
++-------------------------------------+    +-------------------------------------+    +-------------------------------------+
+        ^                                  |                                     |                                     |
+        | Relevant Text Chunks              |                                     |                                     |
+        |                                  v                                     v                                     |
++-------------------------------------+    +-------------------------------------+
+|      Vector Store (ChromaDB)         |    |  User Question (Streamlit)         |
+|                                     |    |                                     |
+|  Stores and retrieves text embeddings |    |  User's question about policies     |
++-------------------------------------+    +-------------------------------------+
 ```
 
-By following these guidelines, you can create a professional-looking diagram that effectively communicates the architecture of the project.
+**Disclaimer:** Due to the limitations of text-based representation, I cannot create a more visually detailed and professional diagram. Please use the instructions and suggestions provided above, along with a dedicated diagramming tool, to create a diagram that meets your specific needs.
 
 ## Setup (local)
 1. Create and activate a virtual environment
