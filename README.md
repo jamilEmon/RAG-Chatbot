@@ -84,7 +84,7 @@ streamlit run app.py
 A new user can run this project by following these steps:
 
 1.  **Clone the repository:** Clone the project repository to your local machine using Git.
-2.  **Install Python:** Ensure that you have Python 3.7 or higher installed on your system.
+2.  **Install Python:** Ensure that you have Python 3.12.9  installed on your system.
 3.  **Create a virtual environment:** Create a virtual environment to isolate the project dependencies.
 4.  **Activate the virtual environment:** Activate the virtual environment.
 5.  **Install dependencies:** Install the required Python packages using `pip install -r requirements.txt`.
