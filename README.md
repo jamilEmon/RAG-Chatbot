@@ -61,7 +61,6 @@ graph LR
     G --> B;
 ```
 
-**Disclaimer:** Due to the limitations of text-based representation, I cannot create a more visually detailed and professional diagram. Please use the instructions and suggestions provided above, along with a dedicated diagramming tool, to create a diagram that meets your specific needs.
 
 ## Setup (local)
 1. Create and activate a virtual environment
